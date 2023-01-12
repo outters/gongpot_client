@@ -42,10 +42,10 @@ class _ShellState extends State<Shell> {
 
           switch (currentIndex) {
             case 0:
-              context.go(Paths.findParty);
+              context.push(Paths.findParty);
               break;
             case 1:
-              context.go(Paths.myParty);
+              context.push(Paths.myParty);
               break;
             default:
           }

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gongpot/providers/find_party_provider.dart';
+import 'package:gongpot/routes/paths.dart';
 import 'package:provider/provider.dart';
 
 class FindParty extends StatelessWidget {
@@ -10,33 +12,40 @@ class FindParty extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => FindPartyProvider(),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Consumer<FindPartyProvider>(
-              builder: (context, provider, child) => FindPartyButton(
-                provider: provider,
-                onTap: () async {
-                  await provider.findParty().then((value) {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: const Text('알림'),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(value ? '파티를 찾았습니다' : '파티를 찾지 못했습니다'),
-                          ],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+          IconButton(
+            onPressed: () => context.push(Paths.setting),
+            icon: Icon(Icons.settings_rounded, color: Theme.of(context).colorScheme.secondary),
+          ),
+          Expanded(
+            child: Center(
+              child: Consumer<FindPartyProvider>(
+                builder: (context, provider, child) => FindPartyButton(
+                  provider: provider,
+                  onTap: () async {
+                    await provider.findParty().then((value) {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('알림'),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(value ? '파티를 찾았습니다' : '파티를 찾지 못했습니다'),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  });
-                },
+                      );
+                    });
+                  },
+                ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

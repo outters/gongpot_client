@@ -8,20 +8,21 @@ class Setting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.7,
         leading: IconButton(
           onPressed: () => context.pop(),
           constraints: const BoxConstraints(),
           iconSize: 32.0,
           icon: Icon(
             Icons.chevron_left_rounded,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
         title: Text(
           '설정',
           style: TextStyle(
             fontSize: 24.0,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.primary,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -29,11 +30,13 @@ class Setting extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
           Expanded(
-            child: ListView.builder(
+            child: ListView.separated(
               itemCount: 10,
-              itemBuilder: (context, index) => ListTile(title: Text('Menu ${index + 1}')),
+              itemBuilder: (context, index) => ListTile(
+                title: Text('Menu ${index + 1}'),
+              ),
+              separatorBuilder: (context, index) => const Divider(thickness: 1.0, height: 1.0),
             ),
           ),
         ],

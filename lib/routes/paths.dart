@@ -1,3 +1,5 @@
 abstract class Paths {
-  static String main = '/';
+  static String root = '/';
+  static String findParty = '/find_party';
+  static String myParty = '/my_party';
 }

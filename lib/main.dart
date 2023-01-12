@@ -3,7 +3,7 @@ import 'package:gongpot/routes/routes.dart';
 import 'package:gongpot/styles/theme.dart';
 
 void main(List<String> args) {
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: router,
       theme: lightTheme,
     );

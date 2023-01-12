@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:gongpot/pages/home/home.dart';
+import 'package:gongpot/views/home/home.dart';
 import 'package:gongpot/routes/paths.dart';
 
 GoRouter router = GoRouter(

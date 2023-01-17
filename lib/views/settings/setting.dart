@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gongpot/routes/paths.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -30,15 +32,10 @@ class Setting extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: ListView.separated(
-              itemCount: 10,
-              itemBuilder: (context, index) => ListTile(
-                title: Text('Menu ${index + 1}'),
-              ),
-              separatorBuilder: (context, index) => const Divider(thickness: 1.0, height: 1.0),
-            ),
-          ),
+          ListTile(
+            onTap: () => UserApi.instance.logout().then((value) => context.go(Paths.root)),
+            title: Text('로그 아웃'),
+          )
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gongpot/views/auth/auth.dart';
 import 'package:gongpot/views/find_party/find_party.dart';
 import 'package:gongpot/routes/paths.dart';
 import 'package:gongpot/views/my_party/my_party.dart';
@@ -11,8 +12,12 @@ final GlobalKey<NavigatorState> shellNavKey = GlobalKey<NavigatorState>();
 
 GoRouter router = GoRouter(
   navigatorKey: rootNavKey,
-  initialLocation: Paths.findParty,
+  initialLocation: Paths.root,
   routes: [
+    GoRoute(
+      path: '/',
+      pageBuilder: (context, state) => const NoTransitionPage(child: Auth()),
+    ),
     ShellRoute(
       navigatorKey: shellNavKey,
       routes: [

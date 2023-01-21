@@ -10,7 +10,7 @@ import 'package:gongpot/views/shell/shell.dart';
 final GlobalKey<NavigatorState> rootNavKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> shellNavKey = GlobalKey<NavigatorState>();
 
-GoRouter router = GoRouter(
+final GoRouter router = GoRouter(
   navigatorKey: rootNavKey,
   initialLocation: Paths.root,
   routes: [

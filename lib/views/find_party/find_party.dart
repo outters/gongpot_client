@@ -39,6 +39,12 @@ class FindParty extends StatelessWidget {
                           ),
                         ),
                       );
+
+                      if (value) {
+                        provider.joinParty().then((_) => context.push(Paths.myParty));
+                      } else {
+                        provider.createParty().then((_) => context.push(Paths.myParty));
+                      }
                     });
                   },
                 ),
@@ -94,7 +100,8 @@ class FindPartyButton extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 24.0),
+                    const SizedBox(height: 24.0),
+                    const Text('파티 탐색 중...'),
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: List.generate(
@@ -102,12 +109,12 @@ class FindPartyButton extends StatelessWidget {
                         (index) => Icon(Icons.person, color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
-                    CupertinoActivityIndicator(),
+                    const CupertinoActivityIndicator(),
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text('중단'),
+                      child: const Text('중단'),
                     ),
-                    SizedBox(height: 12.0),
+                    const SizedBox(height: 12.0),
                   ],
                 ),
         ),

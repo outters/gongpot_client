@@ -21,4 +21,12 @@ class FindPartyProvider extends ChangeNotifier {
     await Future.delayed(Duration(seconds: duration));
     return Random().nextBool();
   }
+
+  Future<void> joinParty() async {
+    await Future.delayed(const Duration(seconds: 2));
+  }
+
+  Future<void> createParty() async {
+    await Future.delayed(const Duration(seconds: 2));
+  }
 }

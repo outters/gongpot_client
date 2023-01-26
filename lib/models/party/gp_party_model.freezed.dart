@@ -23,7 +23,7 @@ mixin _$GpParty {
   int get index => throw _privateConstructorUsedError;
   OttType? get type => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  List<GpMember> get memberids => throw _privateConstructorUsedError;
+  List<GpMember> get memberIds => throw _privateConstructorUsedError;
   String? get adminId => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   DateTime get ceratedAt => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $GpPartyCopyWith<$Res> {
       {int index,
       OttType? type,
       String? name,
-      List<GpMember> memberids,
+      List<GpMember> memberIds,
       String? adminId,
       String? imageUrl,
       DateTime ceratedAt,
@@ -62,7 +62,7 @@ class _$GpPartyCopyWithImpl<$Res> implements $GpPartyCopyWith<$Res> {
     Object? index = freezed,
     Object? type = freezed,
     Object? name = freezed,
-    Object? memberids = freezed,
+    Object? memberIds = freezed,
     Object? adminId = freezed,
     Object? imageUrl = freezed,
     Object? ceratedAt = freezed,
@@ -81,9 +81,9 @@ class _$GpPartyCopyWithImpl<$Res> implements $GpPartyCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      memberids: memberids == freezed
-          ? _value.memberids
-          : memberids // ignore: cast_nullable_to_non_nullable
+      memberIds: memberIds == freezed
+          ? _value.memberIds
+          : memberIds // ignore: cast_nullable_to_non_nullable
               as List<GpMember>,
       adminId: adminId == freezed
           ? _value.adminId
@@ -115,7 +115,7 @@ abstract class _$$_GpPartyCopyWith<$Res> implements $GpPartyCopyWith<$Res> {
       {int index,
       OttType? type,
       String? name,
-      List<GpMember> memberids,
+      List<GpMember> memberIds,
       String? adminId,
       String? imageUrl,
       DateTime ceratedAt,
@@ -136,7 +136,7 @@ class __$$_GpPartyCopyWithImpl<$Res> extends _$GpPartyCopyWithImpl<$Res>
     Object? index = freezed,
     Object? type = freezed,
     Object? name = freezed,
-    Object? memberids = freezed,
+    Object? memberIds = freezed,
     Object? adminId = freezed,
     Object? imageUrl = freezed,
     Object? ceratedAt = freezed,
@@ -155,9 +155,9 @@ class __$$_GpPartyCopyWithImpl<$Res> extends _$GpPartyCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      memberids: memberids == freezed
-          ? _value._memberids
-          : memberids // ignore: cast_nullable_to_non_nullable
+      memberIds: memberIds == freezed
+          ? _value._memberIds
+          : memberIds // ignore: cast_nullable_to_non_nullable
               as List<GpMember>,
       adminId: adminId == freezed
           ? _value.adminId
@@ -186,12 +186,12 @@ class _$_GpParty implements _GpParty {
       {required this.index,
       this.type,
       this.name,
-      final List<GpMember> memberids = const [],
+      final List<GpMember> memberIds = const [],
       this.adminId,
       this.imageUrl,
       required this.ceratedAt,
       required this.updatedAt})
-      : _memberids = memberids;
+      : _memberIds = memberIds;
 
   factory _$_GpParty.fromJson(Map<String, dynamic> json) =>
       _$$_GpPartyFromJson(json);
@@ -202,12 +202,12 @@ class _$_GpParty implements _GpParty {
   final OttType? type;
   @override
   final String? name;
-  final List<GpMember> _memberids;
+  final List<GpMember> _memberIds;
   @override
   @JsonKey()
-  List<GpMember> get memberids {
+  List<GpMember> get memberIds {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_memberids);
+    return EqualUnmodifiableListView(_memberIds);
   }
 
   @override
@@ -221,7 +221,7 @@ class _$_GpParty implements _GpParty {
 
   @override
   String toString() {
-    return 'GpParty(index: $index, type: $type, name: $name, memberids: $memberids, adminId: $adminId, imageUrl: $imageUrl, ceratedAt: $ceratedAt, updatedAt: $updatedAt)';
+    return 'GpParty(index: $index, type: $type, name: $name, memberIds: $memberIds, adminId: $adminId, imageUrl: $imageUrl, ceratedAt: $ceratedAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -233,7 +233,7 @@ class _$_GpParty implements _GpParty {
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
-                .equals(other._memberids, _memberids) &&
+                .equals(other._memberIds, _memberIds) &&
             const DeepCollectionEquality().equals(other.adminId, adminId) &&
             const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
             const DeepCollectionEquality().equals(other.ceratedAt, ceratedAt) &&
@@ -247,7 +247,7 @@ class _$_GpParty implements _GpParty {
       const DeepCollectionEquality().hash(index),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(_memberids),
+      const DeepCollectionEquality().hash(_memberIds),
       const DeepCollectionEquality().hash(adminId),
       const DeepCollectionEquality().hash(imageUrl),
       const DeepCollectionEquality().hash(ceratedAt),
@@ -271,7 +271,7 @@ abstract class _GpParty implements GpParty {
       {required final int index,
       final OttType? type,
       final String? name,
-      final List<GpMember> memberids,
+      final List<GpMember> memberIds,
       final String? adminId,
       final String? imageUrl,
       required final DateTime ceratedAt,
@@ -286,7 +286,7 @@ abstract class _GpParty implements GpParty {
   @override
   String? get name;
   @override
-  List<GpMember> get memberids;
+  List<GpMember> get memberIds;
   @override
   String? get adminId;
   @override

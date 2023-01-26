@@ -10,7 +10,7 @@ _$_GpParty _$$_GpPartyFromJson(Map<String, dynamic> json) => _$_GpParty(
       index: json['index'] as int,
       type: $enumDecodeNullable(_$OttTypeEnumMap, json['type']),
       name: json['name'] as String?,
-      memberids: (json['memberids'] as List<dynamic>?)
+      memberIds: (json['memberIds'] as List<dynamic>?)
               ?.map((e) => GpMember.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -25,7 +25,7 @@ Map<String, dynamic> _$$_GpPartyToJson(_$_GpParty instance) =>
       'index': instance.index,
       'type': _$OttTypeEnumMap[instance.type],
       'name': instance.name,
-      'memberids': instance.memberids,
+      'memberIds': instance.memberIds,
       'adminId': instance.adminId,
       'imageUrl': instance.imageUrl,
       'ceratedAt': instance.ceratedAt.toIso8601String(),

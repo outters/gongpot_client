@@ -11,7 +11,7 @@ _$_GpParty _$$_GpPartyFromJson(Map<String, dynamic> json) => _$_GpParty(
       type: $enumDecodeNullable(_$OttTypeEnumMap, json['type']),
       name: json['name'] as String?,
       memberIds: (json['memberIds'] as List<dynamic>?)
-              ?.map((e) => GpMember.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => e as String)
               .toList() ??
           const [],
       adminId: json['adminId'] as String?,

@@ -27,7 +27,7 @@ final GoRouter router = GoRouter(
         ),
         GoRoute(
           path: Paths.myParty,
-          pageBuilder: (context, state) => const NoTransitionPage(child: MyParty()),
+          pageBuilder: (context, state) => NoTransitionPage(child: MyParty(state: state)),
         )
       ],
       builder: (context, state, child) => Shell(state: state, child: child),

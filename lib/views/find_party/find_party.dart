@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gongpot/providers/find_party_provider.dart';
 import 'package:gongpot/routes/paths.dart';
+import 'package:gongpot/utils/test_repository.dart';
 import 'package:provider/provider.dart';
 
 class FindParty extends StatelessWidget {
@@ -25,8 +26,8 @@ class FindParty extends StatelessWidget {
               child: Consumer<FindPartyProvider>(
                 builder: (context, provider, child) => FindPartyButton(
                   provider: provider,
-                  onTap: () async {
-                    await provider.findParty().then((value) {
+                  onTap: () {
+                    provider.findParty().then((value) {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
@@ -41,9 +42,19 @@ class FindParty extends StatelessWidget {
                       );
 
                       if (value) {
-                        provider.joinParty().then((_) => context.push(Paths.myParty));
+                        provider.joinParty().then((partyIndex) {
+                          context.push(
+                            Paths.myParty,
+                            extra: {'bottomIndex': 1, 'partyIndex': partyIndex},
+                          );
+                        });
                       } else {
-                        provider.createParty().then((_) => context.push(Paths.myParty));
+                        provider.createParty().then((partyIndex) {
+                          context.push(
+                            Paths.myParty,
+                            extra: {'bottomIndex': 1, 'partyIndex': partyIndex},
+                          );
+                        });
                       }
                     });
                   },
@@ -111,7 +122,7 @@ class FindPartyButton extends StatelessWidget {
                     ),
                     const CupertinoActivityIndicator(),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => provider.stopFindingParty(),
                       child: const Text('중단'),
                     ),
                     const SizedBox(height: 12.0),

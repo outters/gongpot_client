@@ -23,7 +23,7 @@ mixin _$GpParty {
   int get index => throw _privateConstructorUsedError;
   OttType? get type => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  List<GpMember> get memberIds => throw _privateConstructorUsedError;
+  List<String> get memberIds => throw _privateConstructorUsedError;
   String? get adminId => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   DateTime get ceratedAt => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $GpPartyCopyWith<$Res> {
       {int index,
       OttType? type,
       String? name,
-      List<GpMember> memberIds,
+      List<String> memberIds,
       String? adminId,
       String? imageUrl,
       DateTime ceratedAt,
@@ -84,7 +84,7 @@ class _$GpPartyCopyWithImpl<$Res> implements $GpPartyCopyWith<$Res> {
       memberIds: memberIds == freezed
           ? _value.memberIds
           : memberIds // ignore: cast_nullable_to_non_nullable
-              as List<GpMember>,
+              as List<String>,
       adminId: adminId == freezed
           ? _value.adminId
           : adminId // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$_GpPartyCopyWith<$Res> implements $GpPartyCopyWith<$Res> {
       {int index,
       OttType? type,
       String? name,
-      List<GpMember> memberIds,
+      List<String> memberIds,
       String? adminId,
       String? imageUrl,
       DateTime ceratedAt,
@@ -158,7 +158,7 @@ class __$$_GpPartyCopyWithImpl<$Res> extends _$GpPartyCopyWithImpl<$Res>
       memberIds: memberIds == freezed
           ? _value._memberIds
           : memberIds // ignore: cast_nullable_to_non_nullable
-              as List<GpMember>,
+              as List<String>,
       adminId: adminId == freezed
           ? _value.adminId
           : adminId // ignore: cast_nullable_to_non_nullable
@@ -186,7 +186,7 @@ class _$_GpParty implements _GpParty {
       {required this.index,
       this.type,
       this.name,
-      final List<GpMember> memberIds = const [],
+      final List<String> memberIds = const [],
       this.adminId,
       this.imageUrl,
       required this.ceratedAt,
@@ -202,10 +202,10 @@ class _$_GpParty implements _GpParty {
   final OttType? type;
   @override
   final String? name;
-  final List<GpMember> _memberIds;
+  final List<String> _memberIds;
   @override
   @JsonKey()
-  List<GpMember> get memberIds {
+  List<String> get memberIds {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_memberIds);
   }
@@ -271,7 +271,7 @@ abstract class _GpParty implements GpParty {
       {required final int index,
       final OttType? type,
       final String? name,
-      final List<GpMember> memberIds,
+      final List<String> memberIds,
       final String? adminId,
       final String? imageUrl,
       required final DateTime ceratedAt,
@@ -286,7 +286,7 @@ abstract class _GpParty implements GpParty {
   @override
   String? get name;
   @override
-  List<GpMember> get memberIds;
+  List<String> get memberIds;
   @override
   String? get adminId;
   @override

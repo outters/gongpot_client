@@ -21,7 +21,7 @@ class _ShellState extends State<Shell> {
 
   @override
   void initState() {
-    currentIndex = 0;
+    currentIndex = (widget.state.extra as Map?)?['bottomindex'] ?? 0;
     super.initState();
   }
 

@@ -12,7 +12,7 @@ class GpParty with _$GpParty {
     required int index,
     OttType? type,
     String? name,
-    @Default([]) List<GpMember> memberIds,
+    @Default([]) List<String> memberIds,
     String? adminId,
     String? imageUrl,
     required DateTime ceratedAt,

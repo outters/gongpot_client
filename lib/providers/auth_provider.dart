@@ -4,11 +4,15 @@ import 'package:gongpot/utils/config.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class AuthProvider extends ChangeNotifier {
+  static late final User kakaoUser;
+
   Future<bool> checkAuth() async {
     if (await AuthApi.instance.hasToken()) {
       try {
         AccessTokenInfo tokenInfo = await UserApi.instance.accessTokenInfo();
         lgr.d('토큰 유효성 체크 성공 ${tokenInfo.id} ${tokenInfo.expiresIn}');
+
+        kakaoUser = await UserApi.instance.me();
         return true;
       } catch (error) {
         if (error is KakaoException && error.isInvalidTokenError()) {
@@ -36,6 +40,8 @@ class AuthProvider extends ChangeNotifier {
     try {
       OAuthToken token = await UserApi.instance.loginWithKakaoTalk();
       lgr.d('로그인 성공 ${token.accessToken}');
+
+      kakaoUser = await UserApi.instance.me();
       return true;
     } catch (error) {
       lgr.d('로그인 실패 $error');
@@ -56,6 +62,8 @@ class AuthProvider extends ChangeNotifier {
       User user = await UserApi.instance.me();
       lgr.d(user);
       lgr.d('로그인 성공 ${token.accessToken}');
+
+      kakaoUser = user;
       return true;
     } catch (error) {
       lgr.d('로그인 실패 $error');

@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:gongpot/models/repository.dart';
 import 'package:gongpot/routes/routes.dart';
 import 'package:gongpot/styles/theme.dart';
+import 'package:gongpot/utils/test_repository.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+
+final testRepo = TestRepository();
+
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
